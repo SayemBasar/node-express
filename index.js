@@ -39,13 +39,14 @@ app.get('/users', (req, res) => {
 // app.METHOD
 app.post('/users', (req, res) => {
     const newUser = req.body;
-    newUser.id=users.length;
+    newUser.id = users.length;
     users.push(newUser);
     console.log('heating the post', req.body);
     // res.send(JSON.stringify(newUser));
     res.json(newUser);
 })
 
+// dynamic api
 app.get('/users/:id', (req, res) => {
     const id = req.params.id;
     const user = users[id]
